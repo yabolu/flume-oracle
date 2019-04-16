@@ -37,6 +37,10 @@ vi flume-env.sh
 export JAVA_HOME=/dbtool/java_software/java_jdk/jdk1.8.0_171
 #保存退出即可
 
+#因为我的项目需求需要对采集上来的每条日志添加物理IP和实例名, 所以我添加了flume自定义拦截器
+
+cd lib/ 
+拷贝 flume-interceptor.jar 到这个目录
 ```
 
 ##### 3. 配置及启动

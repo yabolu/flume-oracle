@@ -19,6 +19,8 @@ source /etc/profile
 #如果服务器上有多个jdk版本, 不建议这样操作, 可以用下面创建flume env的方式进行
 ```
 
+如果是AIX系统, 参考另外一遍文章[AIX 上安装 JDK](https://github.com/yabolu/AIX-JDK/blob/master/README.md)
+
 ##### 2. 安装flume
 
 ```
@@ -35,12 +37,15 @@ vi flume-env.sh
 
 #将JAVA_HOME注释去掉, 并改为:
 export JAVA_HOME=/dbtool/java_software/java_jdk/jdk1.8.0_171
+#如果是AIX系统, 我的配置是:
+export JAVA_HOME=/usr/java7_64
 #保存退出即可
 
 #因为我的项目需求需要对采集上来的每条日志添加物理IP和实例名, 所以我添加了flume自定义拦截器
 
 cd lib/ 
 拷贝 flume-interceptor.jar 到这个目录
+
 ```
 
 ##### 3. 配置及启动
